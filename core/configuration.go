@@ -2,6 +2,7 @@ package core
 
 import (
 	"errors"
+	"fmt"
 	"gopkg.in/yaml.v3"
 	"os"
 )
@@ -32,6 +33,6 @@ func GetComponentConfiguration(name string, conf interface{}) error {
 		}
 		return nil
 	} else {
-		return errors.New("Component configuration not find")
+		return errors.New(fmt.Sprintf("Component configuration not find ,name:%s", name))
 	}
 }

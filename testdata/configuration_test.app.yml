@@ -8,4 +8,5 @@ mysql:
     max_open_conns: 10
 redis:
   main:
-    dsn: redis://default:redispw@localhost:55000/0
+#    dsn: redis://default:redispw@localhost:55000/0
+    dsn: redis://localhost:55000/0

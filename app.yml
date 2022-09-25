@@ -1,0 +1,14 @@
+hello:
+  message: "hi, dev"
+log:
+  reopen_signal: 31
+mysql:
+  main:
+    dsn: root:123456@tcp(127.0.0.1:3306)/simple?charset=utf8mb4&parseTime=True&loc=Local
+    conn_max_lifetime: 1h
+    max_idle_conns: 1
+    max_open_conns: 10
+    slow_threshold: 1 #慢查询
+    colorful: true #sql查询颜色
+    ignore_record_not_found_error: true
+    log_level: 4 #日志级别

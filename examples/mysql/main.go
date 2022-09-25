@@ -10,7 +10,10 @@ import (
 func main() {
 	langgo.Run(&mysql.Instance{})
 	if core.EnvName == core.Development {
-		mysql.Main().AutoMigrate(&Account{})
+		err := mysql.Main().AutoMigrate(&Account{})
+		if err != nil {
+			log.Logger("app", "main").Error().Err(err).Interface("err", err).Send()
+		}
 	}
 	acc := Account{
 		Name: "chihuo",

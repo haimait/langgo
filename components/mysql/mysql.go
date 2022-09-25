@@ -43,12 +43,14 @@ func (i *Instance) Load() error {
 	for k, c := range items {
 		zl := log.Logger("mysql", k)
 
-		l := New(*zl, gormlogger.Config{
-			SlowThreshold:             c.SlowThreshold,
-			Colorful:                  c.Colorful,
-			IgnoreRecordNotFoundError: c.IgnoreRecordNotFoundError,
-			LogLevel:                  c.LogLevel,
-		})
+		l := New(*zl,
+			gormlogger.Config{
+				SlowThreshold:             c.SlowThreshold,
+				Colorful:                  c.Colorful,
+				IgnoreRecordNotFoundError: c.IgnoreRecordNotFoundError,
+				LogLevel:                  c.LogLevel,
+			},
+		)
 
 		conn, err := gorm.Open(gormMysql.Open(c.Dsn), &gorm.Config{Logger: l, SkipDefaultTransaction: true})
 		if err != nil {

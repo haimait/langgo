@@ -1,6 +1,6 @@
 mysql:
   main:
-    dsn: root:123456@tcp(localhost:3306)/simple?charset=utf8mb4&parseTime=True&loc=Local
+    dsn: root:123456@tcp(127.0.0.1:3306)/simple?charset=utf8mb4&parseTime=True&loc=Local
     conn_max_lifetime: 1h
     max_idle_conns: 1
     max_open_conns: 10
